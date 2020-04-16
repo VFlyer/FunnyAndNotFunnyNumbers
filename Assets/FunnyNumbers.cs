@@ -74,6 +74,7 @@ public class FunnyNumbers : MonoBehaviour
                 if (stageretard == 6)
                 {
                     GetComponent<KMBombModule>().HandlePass();
+                    moduleSolved = true;
                     Audio.PlaySoundAtTransform("moan", transform);
                 }
                 else
@@ -116,6 +117,7 @@ public class FunnyNumbers : MonoBehaviour
                 if (stageretard == 6)
                 {
                     GetComponent<KMBombModule>().HandlePass();
+                    moduleSolved = true;
                     Audio.PlaySoundAtTransform("moan", transform);
                 }
                 else
@@ -229,6 +231,35 @@ public class FunnyNumbers : MonoBehaviour
                 HAHAHAHAHAHHAHAHA -= 2;
                 Debug.LogFormat("[Funny Numbers #{0}] This number is a square of a prime. Subtracting 2 gives you {1}.", moduleId, HAHAHAHAHAHHAHAHA);
             }
+        }
+    }
+
+    // Twitch Plays
+    #pragma warning disable 414
+    private readonly string TwitchHelpMessage = "!{0} <funny/unfunny> [Presses that button]";
+    #pragma warning restore 414
+
+    IEnumerator ProcessTwitchCommand(string input)
+    {
+        input = input.ToLowerInvariant();
+        if (input.Split(' ').ToArray().Length != 1)
+            yield break;
+        var words = new string[] { "funny", "unfunny" };
+        if (!words.Contains(input))
+            yield break;
+        yield return null;
+        Buttons[Array.IndexOf(words, input)].OnInteract();
+    }
+
+    IEnumerator TwitchHandleForcedSolve()
+    {
+        while (!moduleSolved)
+        {
+            if (HAHAHAHAHAHHAHAHA > 0)
+                Buttons[0].OnInteract();
+            else
+                Buttons[1].OnInteract();
+            yield return new WaitForSeconds(.1f);
         }
     }
 }
