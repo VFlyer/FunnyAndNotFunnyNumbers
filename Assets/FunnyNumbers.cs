@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,6 @@ public class FunnyNumbers : MonoBehaviour
     private List<int> funnies = new List<int> { 69, 6969, 420, 69420, 42069, 25, 21, 789, 80085, 58008, 8008, 3, 522, 777, 13 };
     private List<int> notfunnies = new List<int> { 0, 1, 68, 70, 421, 419, 19, 666, 24, 2003 };
 
-    //Logging
     static int moduleIdCounter = 1;
     int moduleId;
     private bool moduleSolved;
@@ -40,12 +39,7 @@ public class FunnyNumbers : MonoBehaviour
         {
             Button.OnInteract += delegate () { ButtonPress(Button); return false; };
         }
-
-        //button.OnInteract += delegate () { PressButton(); return false; };
-
     }
-
-    // Use this for initialization
     void Start()
     {
         retard1 = UnityEngine.Random.Range(0, 10);
@@ -102,7 +96,7 @@ public class FunnyNumbers : MonoBehaviour
             else
             {
                 GetComponent<KMBombModule>().HandleStrike();
-                Debug.LogFormat("[Funny Numbers #{0}] You pressed funny when it was unfunny. Fuck you.", moduleId);
+                Debug.LogFormat("[Funny Numbers #{0}] You pressed funny when it was unfunny. Fuck!", moduleId);
             }
         }
         else if (Button == Buttons[1])
@@ -145,7 +139,7 @@ public class FunnyNumbers : MonoBehaviour
             else
             {
                 GetComponent<KMBombModule>().HandleStrike();
-                Debug.LogFormat("[Funny Numbers #{0}] You pressed unfunny when it was funny. Fuck you.", moduleId);
+                Debug.LogFormat("[Funny Numbers #{0}] You pressed unfunny when it was funny. Fuck!", moduleId);
             }
         }
         else
@@ -173,7 +167,7 @@ public class FunnyNumbers : MonoBehaviour
         tres.text = ((sex % 1000 - sex % 100) / 100).ToString();
         quart.text = ((sex % 100 - sex % 10) / 10).ToString();
         cinco.text = (sex % 10).ToString();
-        Debug.LogFormat("[Funny Numbers #{0}] The starting number is {1} for stage {2}.", moduleId, sex, stageretard);
+        Debug.LogFormat("[Funny Numbers #{0}] The starting number is {1} for stage {2}. Starting value is -1 since it is divisible by 1.", moduleId, sex, stageretard);
         for (int i = 0; i < 15; i++)
         {
             if (sex == funnies[i])
@@ -195,7 +189,7 @@ public class FunnyNumbers : MonoBehaviour
             if (sex % funnies[i] == 0)
             {
                 HAHAHAHAHAHHAHAHA += 1;
-                Debug.LogFormat("[Funny Numbers #{0}] This number is divisible by {1}. Adding 1 gives you {2}.", moduleId, funnies[1], HAHAHAHAHAHHAHAHA);
+                Debug.LogFormat("[Funny Numbers #{0}] This number is divisible by {1}. Adding 1 gives you {2}.", moduleId, funnies[i], HAHAHAHAHAHHAHAHA);
             }
         }
         for (int i = 2; i < 10; i++)
@@ -203,7 +197,7 @@ public class FunnyNumbers : MonoBehaviour
             if (sex % notfunnies[i] == 0)
             {
                 HAHAHAHAHAHHAHAHA -= 1;
-                Debug.LogFormat("[Funny Numbers #{0}] This number is divisible by {1}. Subtracting 1 gives you {2}.", moduleId, notfunnies[1], HAHAHAHAHAHHAHAHA);
+                Debug.LogFormat("[Funny Numbers #{0}] This number is divisible by {1}. Subtracting 1 gives you {2}.", moduleId, notfunnies[i], HAHAHAHAHAHHAHAHA);
             }
         }
         if (sex % 2 == 0)
