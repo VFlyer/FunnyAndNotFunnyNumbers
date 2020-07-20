@@ -65,7 +65,7 @@ public class FunnyNumbers : MonoBehaviour
                 stageretard += 1;
                 HAHAHAHAHAHHAHAHA = -1;
                 Debug.LogFormat("[Funny Numbers #{0}] You pressed EL FUNNY. That was correct.", moduleId);
-                if (stageretard == 6)
+                if (stageretard >= 6)
                 {
                     GetComponent<KMBombModule>().HandlePass();
                     moduleSolved = true;
@@ -76,12 +76,21 @@ public class FunnyNumbers : MonoBehaviour
                     switch (stageretard)
                     {
                         case 2:
+                        if (UnityEngine.Random.Range(0, 1000) == 1) {
+                          stageretard = 8;
+                        }
                             FunneChegg(retard2);
                             break;
                         case 3:
+                        if (UnityEngine.Random.Range(0, 100) == 1) {
+                          stageretard = 438;
+                        }
                             FunneChegg(retard3);
                             break;
                         case 4:
+                        if (UnityEngine.Random.Range(0, 10) == 2) {
+                          stageretard = 839;
+                        }
                             FunneChegg(retard4);
                             break;
                         case 5:
@@ -96,7 +105,7 @@ public class FunnyNumbers : MonoBehaviour
             else
             {
                 GetComponent<KMBombModule>().HandleStrike();
-                Debug.LogFormat("[Funny Numbers #{0}] You pressed funny when it was unfunny. Fuck!", moduleId);
+                Debug.LogFormat("[Funny Numbers #{0}] You pressed funny when it was unfunny. Fuck! Nooooooooooooo!", moduleId);
             }
         }
         else if (Button == Buttons[1])
