@@ -117,7 +117,7 @@ public class FunnyNumbers : MonoBehaviour
                 stageretard += 1;
                 HAHAHAHAHAHHAHAHA = -1;
                 Debug.LogFormat("[Funny Numbers #{0}] You pressed EL NO FUNNY. That was correct.", moduleId);
-                if (stageretard == 6)
+                if (stageretard >= 6)
                 {
                     GetComponent<KMBombModule>().HandlePass();
                     moduleSolved = true;

@@ -14,7 +14,10 @@ MonoBehaviour:
   id: FunnyNumbers
   title: Funny Numbers
   author: Deaf
-  description: Determine how hilarious a number is based off of rules
+  description: 'Determine how hilarious a number is based off of rules
+
+
+    Manual can be found at ktane.timwi.de'
   version: 
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 83baef746736c4b4a8934a54da9c0d41, type: 3}
