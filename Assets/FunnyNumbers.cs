@@ -76,20 +76,20 @@ public class FunnyNumbers : MonoBehaviour
                     switch (stageretard)
                     {
                         case 2:
-                        if (UnityEngine.Random.Range(0, 1000) == 1) {
-                          stageretard = 8;
+                        if (UnityEngine.Random.Range(0, 10) == 1) {
+                          stageretard = 5;
                         }
                             FunneChegg(retard2);
                             break;
                         case 3:
-                        if (UnityEngine.Random.Range(0, 100) == 1) {
-                          stageretard = 438;
+                        if (UnityEngine.Random.Range(0, 7) == 1) {
+                          stageretard = 5;
                         }
                             FunneChegg(retard3);
                             break;
                         case 4:
-                        if (UnityEngine.Random.Range(0, 10) == 2) {
-                          stageretard = 839;
+                        if (UnityEngine.Random.Range(0, 5) == 2) {
+                          stageretard = 5;
                         }
                             FunneChegg(retard4);
                             break;
